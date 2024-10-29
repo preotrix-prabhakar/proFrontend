@@ -2,10 +2,19 @@ import styles from './LoginForm.module.css'
 import { HiOutlineLockClosed } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlineEye } from "react-icons/hi";
-
+import { useNavigate } from "react-router";
+import {useState } from "react";
 export default function LoginForm() {
+    const [credentials, setCredentials] = useState({ email: "", password: "" });
+    const [isHidden, setIsHidden] = useState(true);
+    const [errorFlag, setErrorFlag] = useState(false);
+    const navigate = useNavigate();
 
-    
+  const handleSubmit=async (event)=>{
+      event.preventDefault();
+      setErrorFlag(true);
+  }
+
     return (
         <div className={styles.container} >
 
@@ -36,7 +45,7 @@ export default function LoginForm() {
         <button id={styles.submit_button}>Login</button>
       <h1 className={styles.subHeading}>Have no account yet?</h1>
       <button
-        
+        onClick={()=>{navigate('/register')}}
         className={styles.register_button}
       >
         Register
