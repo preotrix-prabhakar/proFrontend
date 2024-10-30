@@ -34,6 +34,7 @@ export default function LoginForm() {
                 <div className={styles.inputFields}>
                 <HiOutlineLockClosed className={styles.icon}/>
                     <input
+                        type="password"
                         id="password"
                         name="password"
                         placeholder="Password"

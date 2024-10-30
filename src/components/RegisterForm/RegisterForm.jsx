@@ -61,7 +61,7 @@ export default function RegisterForm(){
           <HiOutlineLockClosed className={styles.icon}/>
             <input
               className={styles.password_input}
-              type="textarea"
+              type="password"
               id="password"
               name="password"
               placeholder="Password"
@@ -78,7 +78,7 @@ export default function RegisterForm(){
               <HiOutlineLockClosed className={styles.icon}/>
             <input
               className={styles.password_input}
-              type="textarea"
+              type="password"
               id="confirmPassword"
               name="confirmPassword"
               placeholder="Confirm Password"
