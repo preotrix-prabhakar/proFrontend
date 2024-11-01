@@ -1,0 +1,96 @@
+.boardContainer {
+    
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    flex:2;
+    height: 100vh;
+    margin: 0; 
+  padding: 0;
+  }
+  
+  .headingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .welcomeMessage {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: left;
+  }
+  
+  .currentDate {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #707070;
+    text-align: left;
+  }
+  
+  .boardHeading {
+    font-family: Poppins;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: left;
+  }
+  
+  .collapseMenu {
+    font-size: 16px;
+    color: #707070;
+    cursor: pointer;
+  }
+  
+ 
+  .cardsContainer {
+    display: flex;
+    flex: 2;
+    
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    max-width: 450px;
+    background: #eef2f5;
+    border-radius: 10px;
+    padding: 25px;
+  }
+
+  .cardTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .cardTitle {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+  }
+  
+  .collapseIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .taskContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  

@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './BoardPage.module.css'
 import Dashboard from '../../components/Dashboard/Dashboard';
+import Board from '../../components/Board/Board';
 function BoardPage() {
   return (
-    <>
-    <div>
+    
+    <div className={styles.container}>
     <Dashboard/>
-      this is the board page
+      <Board/>
     </div>
-    </>
   )
 }
 

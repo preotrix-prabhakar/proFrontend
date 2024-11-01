@@ -27,7 +27,7 @@ export default function RegisterForm(){
           console.log(response);
         localStorage.setItem("token", response.jwt);
         localStorage.setItem("userName", response.name);
-        navigate("/");
+        navigate("/board");
         }
       }
     }

@@ -35,7 +35,7 @@ export default function Dashboard() {
         </div>
 
         <div className={dashboardStyles.linkSection}>
-          {renderNavItem(boardLogo, "Board", "/")}
+          {renderNavItem(boardLogo, "Board", "/board")}
         </div>
         <div className={dashboardStyles.linkSection}>
           {renderNavItem(analyticsLogo, "Analytics", "/analytics")}

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Setting.module.css";
 import passwordIcon from "../../assets/icons/lock.png";
+import icon from "../../assets/icons/icon.png";
 import eyeLogo from "../../assets/icons/eyeLogo.png";
 import inputAccountIcon from "../../assets/icons/inputAccountIcon.png";
-
+import { nameKey } from "../../utils/variables";
 function Settings() {
   const [isHidden, setIsHidden] = useState(true);
 
@@ -20,7 +21,7 @@ function Settings() {
     const response=await updateName({name:form.name});
     if(response){
       console.log(response);
-      localStorage.setItem(nameStorageKey,form.name);
+      localStorage.setItem(nameKey,form.name);
      }
      else{
         console.log(`something wrong`)
@@ -76,7 +77,17 @@ function Settings() {
             placeholder="Name"
           ></input>
         </div>
-
+        <div className={styles.inputFields}>
+          <img className={styles.icon} src={icon}></img>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Email"
+          ></input>
+        </div>
         <div className={styles.inputFields}>
         <img className={styles.icon} src={passwordIcon}></img>
 
@@ -95,6 +106,7 @@ function Settings() {
               setIsHidden(!isHidden);
             }}
             className={styles.icon}
+            src={eyeLogo}
           ></img>
         </div>
 
@@ -116,7 +128,7 @@ function Settings() {
               setIsHidden(!isHidden);
             }}
             className={styles.icon}
-           
+            src={eyeLogo}
           ></img>
         </div>
 
