@@ -17,7 +17,6 @@ function App() {
         <Route path="/settings" element={<SettingsPage/>} />
       </Routes>
     </BrowserRouter>
-    // <h1>asdfasdfasd</h1>
   )
 } 
 

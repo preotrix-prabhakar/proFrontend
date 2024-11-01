@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import styles from "./Settings.module.css";
+import styles from "./Setting.module.css";
+import passwordIcon from "../../assets/icons/lock.png";
+import eyeLogo from "../../assets/icons/eyeLogo.png";
+import inputAccountIcon from "../../assets/icons/inputAccountIcon.png";
 
 function Settings() {
   const [isHidden, setIsHidden] = useState(true);
@@ -61,7 +64,9 @@ function Settings() {
         <h1 className={styles.heading}>Settings</h1>
       </div>
       <div className={styles.register_form}>
-        <div className={styles.form_input}>
+        <div className={styles.inputFields}>
+        <img className={styles.icon} src={inputAccountIcon}></img>
+
           <input
             type="text"
             id="name"
@@ -72,7 +77,9 @@ function Settings() {
           ></input>
         </div>
 
-        <div className={styles.form_input}>
+        <div className={styles.inputFields}>
+        <img className={styles.icon} src={passwordIcon}></img>
+
           <input
             className={styles.password_input}
             type={isHidden ? "password" : "text"}
@@ -91,7 +98,9 @@ function Settings() {
           ></img>
         </div>
 
-        <div className={styles.form_input}>
+        <div className={styles.inputFields}>
+        <img className={styles.icon} src={passwordIcon}></img>
+
           <input
             className={styles.password_input}
             type={isHidden ? "password" : "text"}

@@ -4,8 +4,8 @@ import Dashboard from '../../components/Dashboard/Dashboard';
 function BoardPage() {
   return (
     <>
-    <Dashboard/>
     <div>
+    <Dashboard/>
       this is the board page
     </div>
     </>

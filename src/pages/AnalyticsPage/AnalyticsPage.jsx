@@ -3,8 +3,9 @@ import React from 'react'
 
 function AnalyticsPage(){
 return(
-    <div>
-    this is the analytics page
+    <div className={styles.main_container}>
+        <Dashboard></Dashboard>
+        <Analytics></Analytics>
     </div>
 )
 }
