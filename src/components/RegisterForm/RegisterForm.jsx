@@ -12,6 +12,7 @@ export default function RegisterForm(){
   const navigate=useNavigate();
     const [form,setForm]=useState({name:"",email:"",confirmPassword:"",password:""});
     const [isHidden,setIsHidden]=useState(true);
+    const [hideConfirm,setHideConfirm]=useState(true);
 
     const handleChange=(e)=>{
       const {name,value}=e.target;
@@ -42,6 +43,7 @@ export default function RegisterForm(){
               type="text"
               id="name"
               name="name"
+              value={form.name}
               placeholder="Name"
             onChange={handleChange}
             ></input>
@@ -53,6 +55,7 @@ export default function RegisterForm(){
               type="textarea"
               id="email"
               name="email"
+            value={form.email}
               placeholder="Email"
             onChange={handleChange}
             ></input>
@@ -61,8 +64,10 @@ export default function RegisterForm(){
           <HiOutlineLockClosed className={styles.icon}/>
             <input
               className={styles.password_input}
-              type="password"
+              type={isHidden ? "password" : "text"}
+
               id="password"
+            value={form.password}
               name="password"
               placeholder="Password"
             onChange={handleChange}
@@ -78,14 +83,15 @@ export default function RegisterForm(){
               <HiOutlineLockClosed className={styles.icon}/>
             <input
               className={styles.password_input}
-              type="password"
+            type={hideConfirm ? "password" : "text"}
               id="confirmPassword"
+            value={form.confirmPassword}
               name="confirmPassword"
               placeholder="Confirm Password"
              onChange={handleChange}
             ></input>{
-              (isHidden)?<HiOutlineEye className={styles.icon} onClick={()=>setIsHidden(!isHidden)} />:
-              <PiEyeSlash className={styles.icon} onClick={()=>setIsHidden(!isHidden)} />
+              (hideConfirm)?<HiOutlineEye className={styles.icon} onClick={()=>setHideConfirm(!hideConfirm)} />:
+              <PiEyeSlash className={styles.icon} onClick={()=>setHideConfirm(!hideConfirm)} />
               }
           </div>
           

@@ -15,7 +15,7 @@ export default function Dashboard() {
   const onLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    navigate("/login");
+    navigate("/");
   };
 
   const renderNavItem = (icon, label, path) => (

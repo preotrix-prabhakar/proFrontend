@@ -3,7 +3,7 @@ const baseURL = "http://localhost:5000";
 
 export const userLogin=async({ email, password })=>{
     try {
-        const reqUrl='${baseURL}/login';
+        const reqUrl='${baseURL}/';
         const reqPayload={ email ,password};
         const response = await axios.post(reqUrl,reqPayload);
         return response

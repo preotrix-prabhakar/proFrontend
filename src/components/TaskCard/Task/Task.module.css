@@ -37,3 +37,22 @@
   .textarea:focus {
     outline: none;
   }
+  
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.deleteIcon {
+  color: #cf3636;
+  font-size: 20px;
+}
+
+.deleteButton:hover .deleteIcon {
+  color: #d32f2f; 
+}
