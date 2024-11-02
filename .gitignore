@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
+Board2
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -93,4 +93,23 @@
     font-size: 14px;
     color: #333;
   }
-  
+  .durationButton {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 4px;   
+    font-size: 16px;
+    color: #707070;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;           
+  }
+.durationOptions{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transition: 3s;
+    background-color: white;
+    z-index: 1;
+    
+}

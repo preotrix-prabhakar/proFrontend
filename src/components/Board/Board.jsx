@@ -1,6 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import styles from "./Board.module.css";
 import collapseIcon from "../../assets/icons/collapseIcon.png"; // Adjust path as necessary
+import TaskCard from "../TaskCard/TaskCard";
+import { MdKeyboardArrowDown,MdKeyboardArrowUp } from "react-icons/md";
 
 const nameStorageKey = "userName";
 
@@ -28,7 +30,7 @@ const getFormattedDate = () => {
 
 function Board() {
   const userName = localStorage.getItem(nameStorageKey);
-
+  const [flag,setFlag]=useState(true);
   return (
     <div className={styles.boardContainer}>
       <div className={styles.headingContainer}>
@@ -38,7 +40,21 @@ function Board() {
 
       <div className={styles.headingContainer}>
         <div className={styles.boardHeading}>Board</div>
-        <div className={styles.collapseMenu}>Collapse menu ^</div>
+        <div>
+          <button 
+          className={styles.durationButton} 
+          onClick={() => setFlag(!flag)}
+        >
+          This Week {flag ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+        </button>
+        {!flag && (
+          <div className={styles.durationOptions}>
+            <p>Today</p>
+            <p>This Week</p>
+            <p>This Month</p>
+          </div>
+        )}
+      </div>
       </div>
 
       <div className={styles.cardsContainer}>
@@ -49,7 +65,7 @@ function Board() {
               <img src={collapseIcon} alt="collapse icon" className={styles.collapseIcon} />
             </div>
             <div className={styles.taskContainer}>
-              Component Here
+              <TaskCard/>
             </div>
           </div>
         ))}
