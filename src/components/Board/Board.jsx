@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import styles from "./Board.module.css";
-import collapseIcon from "../../assets/icons/collapseIcon.png"; // Adjust path as necessary
+import collapseIcon from "../../assets/icons/collapseIcon.png"; 
 import TaskCard from "../TaskCard/TaskCard";
 import { MdKeyboardArrowDown,MdKeyboardArrowUp } from "react-icons/md";
 

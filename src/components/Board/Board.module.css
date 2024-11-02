@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
-    flex:2;
     height: 100vh;
     margin: 0; 
   padding: 0;
@@ -13,21 +12,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  margin: 20px;
+
   }
   
   .welcomeMessage {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 22px;
     font-weight: 600;
     line-height: 33px;
-    text-align: left;
   }
   
   .currentDate {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 20px;
     font-weight: 500;
-    line-height: 30px;
     color: #707070;
     text-align: left;
   }
@@ -50,7 +49,8 @@
   .cardsContainer {
     display: flex;
     flex: 2;
-    
+    min-width: 400px;
+    overflow: auto;
     gap: 10px;
     margin-top: 20px;
   }
@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: column;
     width: 30%;
-    max-width: 450px;
+    min-width: 360px;
     background: #eef2f5;
     border-radius: 10px;
     padding: 25px;

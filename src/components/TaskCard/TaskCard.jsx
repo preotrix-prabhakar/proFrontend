@@ -1,41 +1,52 @@
-import React, { useState } from 'react'
-import styles from './TaskCard.module.css'
-import Task from './Task/Task'
-import { MdKeyboardArrowDown,MdKeyboardArrowUp } from "react-icons/md";
+
+import React, { useState } from 'react';
+import styles from './TaskCard.module.css';
+import Task from './Task/Task';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 function TaskCard() {
-    const [flag,setFlag]=useState(true);
+    const [isCollapsed, setIsCollapsed] = useState(true);
+    const priorityColorMap={
+        low:"#63C05B",
+        medium:"#18B0FF",
+        high:"#FF2473",
+      }
     return (
         <div className={styles.container}>
-            <div className={styles.priority_container}>
-                <div>prioroty</div>
-                <div>...</div>
+            <div className={styles.priorityContainer}>
+                <div className={styles.priority}><span style={{color:priorityColorMap["low"]}} >●</span>
+                <p>High Priority</p></div>
+                <button className={styles.collapseButton} onClick={() => setIsCollapsed(!isCollapsed)}>
+                    {isCollapsed ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+                </button>
             </div>
-            <h1>Title</h1>
-            <div className={styles.checklist_heading}>
-                <p>Checklist (1/3)</p>
-                <button 
-          className={styles.durationButton} 
-          onClick={() => setFlag(!flag)}
-        >{flag ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
-        </button>
+            <h1 className={styles.taskTitle}>Hero Section</h1>
 
+            <div className={styles.checklistHeadingContainer}>
+                <p>Checklist (1/3)</p>
+                <button className={styles.taskCollapseButton} onClick={() => setIsCollapsed(!isCollapsed)}>
+                 {isCollapsed ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+                </button>
             </div>
-            <div className={styles.tasks}>
-                <Task></Task>
-                <Task></Task>
-            </div>
+
+            {!isCollapsed && (
+                <div className={styles.tasks}>
+                    <Task />
+                    <Task />
+                </div>
+            )}
+
             <div className={styles.footer}>
-                <button> select date</button>
-                <div>
-                    
-                    <button> backlog</button>
-                    <button>to do</button>
-                    <button>in progress</button>
-                    <button>done </button>
+                <button className={styles.selectDateButton}>Select Date</button>
+                <div className={styles.footerInside}>
+                    <button>Backlog</button>
+                    <button>To Do</button>
+                    <button>In Progress</button>
+                    <button>Done</button>
                 </div>
             </div>
         </div>
-    )
+    );
 }
-export default TaskCard
+
+export default TaskCard;
